@@ -1,0 +1,92 @@
+site_name: 선적 품명 군집 · 개발 문서
+site_description: 선적 품명(HHMITEM)을 뜻으로 묶어 계층 트리로 만드는 방법과 평가 (공개판)
+site_url: https://sinokorofficial.github.io/hhmitem-cluster-docs/
+
+repo_name: hhmitem-cluster-docs
+repo_url: https://github.com/SinokorOfficial/hhmitem-cluster-docs
+
+docs_dir: docs
+
+# 공개 리포다. 실데이터(BL 건수·고객사·DB/서버 주소)는 넣지 않는다. 코드와 원자료는 비공개 리포에 있다.
+
+nav:
+  - 홈: index.md
+  - 방법:
+      - 1. 데이터와 정리: data.md
+      - 2. 임베딩과 유사도: embedding.md
+      - 3. 평균 연결 트리: tree.md
+      - 4. 절단과 새 품명 붙이기: cut.md
+  - 평가:
+      - 5. 라벨 없이 평가하기: evaluation.md
+      - 6. 방법 비교 결과: results.md
+      - 7. 검수에서 찾은 것: audit.md
+      - 8. 범주용 임베딩 후보: embedding-choice.md
+  - 9. 약점과 결정할 것: decisions.md
+  - 화면 보는 법: screens.md
+  - 용어: glossary.md
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  font:
+    text: Pretendard
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: ¶
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+copyright: 장금상선 AI 파트
